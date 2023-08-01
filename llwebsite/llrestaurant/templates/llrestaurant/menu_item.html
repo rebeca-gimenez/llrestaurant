@@ -1,0 +1,25 @@
+{% extends "llrestaurant/base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>From our menu</h1>
+<nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+        <li><a href="{% url 'home' %}">Home</a> >> </li>
+        <li><a href="{% url 'menu' %}">Menu</a> >> </li>
+        <li aria-current="page">{{ menu.dish }}</li>
+    </ol>
+</nav>
+<div class="row">
+    <img src="{% static 'images/' %}{{ menu.slug }}.jpg" alt="{{ menu.dish }}" style="float:right; height: 15em; margin: 1em; object-fit: cover; width: 45%;"/>
+    <h2>{{ menu.dish }}</h2>
+    <ul>
+        <li>
+            <p>Price: ${{ menu.price }}.00</p>
+        </li>
+        <li>
+            <p>Ingredients: {{ menu.ingredients }}</p>
+        </li>
+    </ul>
+</div>
+{% endblock %}

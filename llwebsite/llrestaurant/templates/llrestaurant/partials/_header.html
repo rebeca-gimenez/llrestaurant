@@ -1,0 +1,15 @@
+{# Load static files #}
+{% load static %}
+
+<header>
+    {# Use the url tag to avoid hardcoded URLs #}
+    <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="LL Restaurant logo" style="width: 25%;"/></a>
+  
+</header>
+<nav class="main">
+  <ul>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'menu' %}">Menu</a></li>
+    <li><a href="{% url 'reservations' %}">Reservations</a></li>
+  </ul>
+</nav>

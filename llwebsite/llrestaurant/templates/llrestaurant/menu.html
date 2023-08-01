@@ -1,0 +1,12 @@
+{% extends "llrestaurant/base.html" %}
+
+{% block content %}
+<h1>Menu</h1>
+{% if dish_list %}
+    {% for plate in dish_list %}
+    <p><a href="{% url 'menu-item' slug=plate.slug %}">{{ plate.dish }}</a><br>${{ plate.price }}.00</p>
+    {% endfor %}
+{% else %}
+    <p>Sorry! We don't have any dishes available</p>
+{% endif %}
+{% endblock %}
